@@ -20,3 +20,24 @@ An example API and a set of CRUD ops to sharpen my fastapi skills. Endpoints of 
 | case-media-transcription-detail       | api/cases/\<str:caseId>/case-media/\<str:mediaId>/transcription/\<str:transcriptionId>               |               |               |
 | user-devices                          | api/user-devices                                                                                     |               |               |
 | user-device-detail                    | api/user-devices/\<str:id>                                                                           |               |               |
+
+# Migrations
+
+## Initial Migration
+```
+alembic revision --autogenerate -m "Initial schema"
+alembic upgrade head
+```
+
+## More Migrations
+```
+alembic revision --autogenerate -m "Add X to User"
+alembic upgrade head
+```
+
+# TODO
+- Fill the scripts for faster project setup.
+- Import all models from the Django project.
+- Create services for media handling etc.
+- Create schema for API responses (success/error).
+- Create authentication.

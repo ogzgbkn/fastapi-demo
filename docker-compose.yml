@@ -1,0 +1,16 @@
+# TODO: pip install mysqlclient is necessary. Slim image has problems with it. Will try Buster and Ubuntu
+
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: always
+    env_file: app/.env
+    ports:
+      - "3306:3306"
+
+volumes:
+  mysql_data:
